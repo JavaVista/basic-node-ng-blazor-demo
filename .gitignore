@@ -1,0 +1,25 @@
+# .gitignore
+
+# Ignore Node Express project
+/node-express-component-demo/*
+
+# Ignore Basic Website project
+/basic-Website-component-demo/*
+
+# Ignore Angular specific files
+**/node_modules/
+**/dist/
+**/.angular-build/
+**/.angular-cache/
+
+# Ignore Blazor specific files
+**/obj/
+**/bin/
+*.user
+*.suo
+*.userprefs
+debug.log
+**/.vs/
+**/.vscode/
+*.pidb
+*.sln.ide/

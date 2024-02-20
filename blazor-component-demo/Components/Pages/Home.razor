@@ -1,0 +1,29 @@
+﻿@page "/"
+
+<PageTitle>Home</PageTitle>
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<main class="main-container">
+
+    <div class="container">
+        <my-component first="Stencil" middle="not a framework" last="but actually a compiler"></my-component>
+
+        <tooltip-stencil-component class="tooltip-wrapper"
+            text="Search for a Marvel character in my Basic WebSite">Search for
+            your favorite
+            character</tooltip-stencil-component>
+
+        <!-- Marvel Character Search Components -->
+        <search-input-component class="search-input-wrapper" value="Iron Man"></search-input-component>
+
+        <character-card-component class="character-card-wrapper"></character-card-component>
+
+        <!-- Alpha Vantage Stock Price Components -->
+        <stock-price-component class="stock-wrapper" stock-symbol="MSFT"></stock-price-component>
+
+        <stock-finder-component class="stock-wrapper"></stock-finder-component>
+    </div>
+</main>
