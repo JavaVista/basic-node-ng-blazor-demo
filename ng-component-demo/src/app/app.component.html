@@ -209,21 +209,21 @@
 
         <div class="container">
 
-          <my-component first="Stencil" middle="not a framework" last="but actually a compiler"></my-component>
+          <my-component first="Angular" middle="a framework"></my-component>
 
-          <tooltip-stencil-component class="tooltip-wrapper"
-            text="Search for a Marvel character in my Basic WebSite">Search for your favorite
-            character</tooltip-stencil-component>
+          <tooltip-stencil-component class="tooltip-wrapper" text="Type a name to find your Marvel
+            character">Search for a Marvel character in Angular</tooltip-stencil-component>
 
           <!-- Marvel Character Search Components -->
-          <search-input-component class="search-input-wrapper" value="Iron Man"></search-input-component>
+          <search-input-component #marvelSearchInput class="search-input-wrapper"
+            value="Captain America"></search-input-component>
 
           <character-card-component class="character-card-wrapper"></character-card-component>
 
           <!-- Alpha Vantage Stock Price Components -->
-          <stock-price-component class="stock-wrapper" stock-symbol="MSFT"></stock-price-component>
+          <stock-price-component #stockPrice class="stock-wrapper" stock-symbol="IBM"></stock-price-component>
 
-          <stock-finder-component class="stock-wrapper"></stock-finder-component>
+          <stock-finder-component #stockFinder class="stock-wrapper"></stock-finder-component>
 
         </div>
       </main>

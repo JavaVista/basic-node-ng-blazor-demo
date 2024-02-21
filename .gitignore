@@ -23,4 +23,7 @@ debug.log
 **/.vscode/
 *.pidb
 *.sln.ide/
+
+# misc
 *.DS_Store
+.env
