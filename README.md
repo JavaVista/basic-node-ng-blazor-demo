@@ -63,7 +63,7 @@ dotnet restore
 dotnet run
 ```
 
-- The application will be available at `http://localhost:5237`.
+- The application will be available at `http://localhost:5258`.
 
 ### Usage
 
