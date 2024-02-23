@@ -1,4 +1,5 @@
 ﻿@inject MarvelApiService MarvelApi
+@inject IJSRuntime JS
 
 @page "/"
 
@@ -15,16 +16,16 @@ Welcome to your new app.
         <my-component first="Stencil" middle="not a framework" last="but actually a compiler"></my-component>
 
         <tooltip-stencil-component class="tooltip-wrapper"
-            text="Search for a Marvel character in my Basic WebSite">Search for
+                                   text="Search for a Marvel character in my Basic WebSite">
+            Search for
             your favorite
-            character</tooltip-stencil-component>
+            character
+        </tooltip-stencil-component>
 
         <!-- Marvel Character Search Components -->
-        <input @bind="characterName" placeholder="Enter character name" />
-        <button @onclick="() => FetchCharacter(characterName)">Search</button>
 
-        <search-input-component id="searchInputComponent" class="search-input-wrapper"
-            value="Iron Man"></search-input-component>
+        <search-input-component class="search-input-wrapper"
+                                value="Iron Man"></search-input-component>
 
         <character-card-component class="character-card-wrapper"></character-card-component>
 
@@ -36,12 +37,13 @@ Welcome to your new app.
 </main>
 
 @code {
-    private string characterName = "";
-
-    private async Task FetchCharacter(string name)
+    protected override async Task OnAfterRenderAsync(bool firstRender)
     {
-        @inject IJSRuntime JsRuntime
-
-        await JsRuntime.InvokeVoidAsync("marvelComponentInterop.fetchCharacter", "search-input-component", name);
+        if (firstRender)
+        {
+            // Call the JavaScript function to set the service on the Stencil component
+            await JS.InvokeVoidAsync("setMarvelApiService", "search-input-component", MarvelApi);
+        }
     }
+
 }
