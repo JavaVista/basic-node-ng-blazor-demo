@@ -32,7 +32,6 @@ Welcome to your new Blazor Web app.
     {
         if (firstRender)
         {
-            @* var avKey = "your_alpha_vantage_api_key_here"; // Consider securely managing this key *@
             await JS.InvokeVoidAsync("setAvApiServiceOnComponent", "stock-price-component");
             await JS.InvokeVoidAsync("setAvApiServiceOnComponent", "stock-finder-component");
         }
